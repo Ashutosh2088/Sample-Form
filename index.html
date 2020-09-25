@@ -1,0 +1,91 @@
+<html>
+    <style>
+        body
+        {
+            background-image: url("Assets/forest_trees_fog_110131_1920x1080.jpg");
+            background-attachment: fixed;
+        }
+    </style>
+    <body>
+        <font face = "Segoe UI Light">
+            <div align = "center" text-align : left>
+                <form name = "form1">
+                    <center><h1>Sample Form</h1></center>
+                    <h4>Hello, please take some time to fill out the following form</h4>
+                    <h2>Personal Info</h2>
+                    <b><label>Name</label></b>
+                    <input type = "text" name = "name" id = "name"><br><br>
+                    
+                    <b><label>Age</label></b>
+                    <input type = "text" name = "age" id = "age"><br><br>
+                    
+                    <b><label>Gender</label></b>
+                    <select name = "gender" id = "gender" >
+                        <option value = "male" >Male</option>
+                        <option value = "female" >Female</option>
+                        <option value = "not_disclosed" >Prefer Not to Disclose..</option>
+                    </select>
+                    <br><br>
+                    
+                    <b>Please select your current location</b><br>
+                    <input type = radio name = "location" id = "ambala" value = "ambala">
+                    <label for = "ambala">Ambala</label>
+                    <input type = radio name = "location" id = "patiala" value = "patiala">
+                    <label for = "ambala">Patiala</label>
+                    <input type = radio name = "location" id = "ludhiana" value = "ludhiana">
+                    <label for = "ambala">Ludhiana</label>
+                    <input type = radio name = "location" id = "other" value = "other">
+                    <label for = "ambala">Other</label>
+                    <br><br>
+                    
+                    <h2>Feedback</h2>
+                    <b>How Likely are you going to refer our service to others on a scale of 1 to 5? <br>(1 : Not at all, 5 : Will Surely Recomend)</b></label><br>
+                    <!-- <input type = range id = refer_value name = "refer_value" min = 1 max = 10> -->
+                    <input type = radio name = "points" id = "1" value = "1">
+                    <label for = "1">1</label>
+                    <input type = radio name = "points" id = "2" value = "2">
+                    <label for = "2">2</label>
+                    <input type = radio name = "points" id = "3" value = "3">
+                    <label for = "3">3</label>
+                    <input type = radio name = "points" id = "4" value = "4">
+                    <label for = "4">4</label>
+                    <input type = radio name = "points" id = "5" value = "5">
+                    <label for = "5">5</label>
+                    <br>
+
+                    <b><label for = "suggestions">Any Suggestions?</label></b><br><br>
+                    <textarea id = "suggestions" name = "suggestions" rows = "10" cols = "50"></textarea><br><br>
+
+                    <button onclick="validateForm()">Click Here to Submit</button>
+                    <script>
+                        function validateForm()
+                        {
+                            if(document.forms["form1"]["name"].value == "" || document.forms["form1"]["age"].value == ""
+                            || document.forms["form1"]["gender"].value  == ""|| document.forms["form1"]["location"].value == "")
+                            {
+                                alert("Please ensure that you have filled everything under the Personal Info section.\nPress OK to continue")
+                            }
+                            else
+                            {
+                                var good_msg = "Thanks for filling out the form. Its great to know that you had great experience"
+                                var bad_msg = "Thank you for filling out the form. We will imporve our services"
+
+                                if(document.forms["form1"]["points"].value == "")
+                                {
+                                    alert("Thank You for filling out the form")
+                                }
+                                else
+                                {
+                                    if(parseInt(document.forms["form1"]["points"].value) <= 2)
+                                        alert(good_msg)
+                                    else
+                                        alert(bad_msg)
+                                }
+                            }
+                        }
+                    </script>
+                </form>
+            </div>
+        </font>
+    </body>
+</html>
